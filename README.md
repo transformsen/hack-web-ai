@@ -1,59 +1,30 @@
 # HackWebAi
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
+**Chrome-Built AI APIs for Real-World Web Applications**
 
-## Development server
+This project demonstrates how to integrate Chrome-Built AI APIs into real-world web applications.
 
-To start a local development server, run:
+## Objective
 
-```bash
-ng serve
+The goal is to bring AI-enhanced experiences to the user interface (UI) without disrupting the familiar user experience. Many users are accustomed to the standard behaviors of web applications, such as forms, buttons, tables, and charts. Altering these experiences overnight can create confusion and difficulties.
+
+## Solution
+
+This solution aims to assist users with filling out forms and reviewing them using natural language. It leverages AI to enhance user interaction without requiring drastic changes to the existing interface.
+
+Most applications present data in forms like tables, key-value pairs, or charts for visualization. However, explicit coding is often required to customize these elements differently. 
+
+### Example Use Case
+
+Consider a hackathon registration form with two columns: one for free registration and another for prizes. By using the Built-In AI API, users can interact with the form using natural language, making it easier to fill out without complex customization.
+
+Similary Joining the hackathon can be done with natural lanuage and summarizer API can help reviewing the form. 
+
+## Running this application
+```
+npm i
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+![Screens](builtin-ai-natural-lanuage.png)
+![Screens](builtin-ai-fill-form.png)
