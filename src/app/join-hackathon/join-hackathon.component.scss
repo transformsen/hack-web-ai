@@ -1,0 +1,16 @@
+.join-hackathon-form{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+}
+
+.overlay-container{
+    padding: 10px;
+    background-color: black;
+    display: flex;
+}
+
+.example-full-width{
+    width: 75vw;
+}

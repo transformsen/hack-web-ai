@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+html {
+    color-scheme: dark;
+    @include mat.theme((
+        primary: mat.$orange-palette,
+        accent: mat.$orange-palette,
+        theme-type: dark,
+        typography: Roboto,
+        density: -1
+    ));
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Core Data Grid CSS */
+@import 'ag-grid-community/styles/ag-grid.css';
+/* Quartz Theme Specific CSS */
+@import 'ag-grid-community/styles/ag-theme-material.css';

@@ -1,0 +1,81 @@
+
+<button mat-icon-button (click)="openDialog()"
+    cdkOverlayOrigin #trigger="cdkOverlayOrigin"
+>
+    <mat-icon>auto_awesome</mat-icon>
+  </button>
+
+  <ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+>
+<div class="overlay-container">
+    <mat-form-field class="example-full-width" appearance="outline">
+    <input matInput type="text" placeholder="Ask AI" #inputelement [(ngModel)]="question" (keydown.enter)="onSend()">
+    <mat-icon matSuffix (click)="onSend()">send</mat-icon>
+    </mat-form-field>
+    <mat-spinner diameter="24" *ngIf="isLoading"></mat-spinner>
+    <div [innerHTML]="answer"></div>
+</div>
+</ng-template>
+
+
+<mat-card class="form-card">
+    <h2>Join Hackathon</h2>
+    <form [formGroup]="joinHackathonForm" class="join-hackathon-form">
+      <!-- Team Name -->
+      <mat-form-field appearance="outline">
+        <mat-label>Team Name</mat-label>
+        <input matInput formControlName="teamName" placeholder="Enter team name" />       
+      </mat-form-field>
+  
+      <!-- Technology Stack -->
+      <mat-form-field appearance="outline">
+        <mat-label>Technology Stack</mat-label>
+        <input matInput formControlName="technologyStack" placeholder="e.g., Angular, Node.js" />
+      </mat-form-field>
+  
+      <!-- Skill -->
+      <mat-form-field appearance="outline">
+        <mat-label>Skill</mat-label>
+        <input matInput formControlName="skill" placeholder="e.g., Backend, Frontend" />
+      </mat-form-field>
+  
+      <!-- Full Name -->
+      <mat-form-field appearance="outline">
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="fullName" placeholder="Enter your full name" />        
+      </mat-form-field>
+  
+      <!-- Gender -->
+      <mat-radio-group formControlName="gender">
+        <label>Gender:</label>
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female">Female</mat-radio-button>
+      </mat-radio-group>
+     
+      <!-- Country -->
+      <mat-form-field appearance="outline">
+        <mat-label>Country</mat-label>
+        <mat-select formControlName="country">
+          <mat-option value="" disabled>Select country</mat-option>
+          <mat-option *ngFor="let country of countries" [value]="country">
+            {{ country }}
+          </mat-option>
+        </mat-select>        
+      </mat-form-field>
+  
+      <!-- Additional Information -->
+      <mat-form-field appearance="outline">
+        <mat-label>Additional Information</mat-label>
+        <textarea matInput formControlName="description" placeholder="Anything you'd like to add?"></textarea>
+      </mat-form-field>
+  
+      <!-- Submit Button -->
+      <button mat-raised-button color="primary" type="submit" [disabled]="joinHackathonForm.invalid">
+        Submit
+      </button>
+    </form>
+  </mat-card>
+  

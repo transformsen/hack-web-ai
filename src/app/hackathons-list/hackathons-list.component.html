@@ -1,0 +1,29 @@
+<button mat-icon-button (click)="openDialog()"
+    cdkOverlayOrigin #trigger="cdkOverlayOrigin"
+>
+    <mat-icon>auto_awesome</mat-icon>
+  </button>
+
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+  [cdkConnectedOverlayOffsetX]="50"
+  [cdkConnectedOverlayOffsetY]="-80"
+>
+<div class="overlay-container">
+    <mat-form-field class="example-full-width" appearance="outline">
+    <input matInput type="text" placeholder="Ask AI" #inputelement [(ngModel)]="question" (keydown.enter)="onSend()">
+    <mat-icon matSuffix (click)="onSend()">send</mat-icon>
+    </mat-form-field>
+    <mat-spinner diameter="24" *ngIf="isLoading"></mat-spinner>
+    <div [innerHTML]="answer"></div>
+</div>
+</ng-template>
+
+<ag-grid-angular
+style="height: 45vh;"
+class="ag-theme-material-dark"
+[rowData]="rowData"
+[columnDefs]="columnDefs" />
